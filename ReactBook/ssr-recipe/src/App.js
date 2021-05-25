@@ -6,6 +6,7 @@ import { Route } from "react-router";
 import Red from "./components/Red";
 import RedPage from "./pages/RedPage";
 import BluePage from "./pages/BluePage";
+import UserPage from "./pages/UsersPage";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Route path="/red" component={RedPage} />
 
       <Route path="/blue" component={BluePage} />
+
+      <Route path="/users" component={UserPage} />
     </div>
   );
 }
