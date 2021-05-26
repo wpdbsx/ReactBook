@@ -3,11 +3,13 @@ import "./App.css";
 import Blue from "./components/Blue";
 import Menu from "./components/Menu";
 import { Route } from "react-router";
-import Red from "./components/Red";
-import RedPage from "./pages/RedPage";
-import BluePage from "./pages/BluePage";
-import UserPage from "./pages/UsersPage";
 
+import loadable from "@loadable/component";
+const RedPage = loadable(() => import("./pages/RedPage"));
+
+const BluePage = loadable(() => import("./pages/BluePage"));
+
+const UserPage = loadable(() => import("./pages/UsersPage"));
 function App() {
   return (
     <div>
