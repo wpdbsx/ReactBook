@@ -17,7 +17,7 @@ function App() {
       <hr />
       <Route path="/red" component={RedPage} />
 
-      <Route path="/blue" component={BluePage} />
+      <Route path="/blue" component={Blue} />
 
       <Route path="/users" component={UserPage} />
     </div>
