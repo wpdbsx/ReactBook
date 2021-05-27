@@ -12,7 +12,7 @@ import rootReducer from "./modules";
 import PreloadContext from "./lib/PreloadContext";
 import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
 // asset-manifest.json에서 파일 경로들을 조회합니다.
-const statsFile = path.resolve("./build/loadable-status.json");
+const statsFile = path.resolve("./build/loadable-stats.json");
 
 // const chunks = Object.keys(manifest.files)
 //   .filter((key) => /chunk\.js$/.exec(key)) // chunk.js로 끝나는 키를 찾아서
@@ -31,17 +31,16 @@ function createPage(root, tags) {
       />
       <meta name="theme-color" content="#000000" />
       <title>React App</title>
-      <link href="${tags.styles}" rel="stylesheet" />
+      ${tags.styles}
+        ${tags.links}
     </head>
     <body>
       <noscript>You need to enable JavaScript to run this app.</noscript>
       <div id="root">
         ${root}
       </div>
-      ${tags}
-      <script src="${manifest.files["runtime-main.js"]}"></script>
-      ${chunks}
-      <script src="${manifest.files["main.js"]}"></script>
+      ${tags.scripts}
+    
     </body>
     </html>
       `;
