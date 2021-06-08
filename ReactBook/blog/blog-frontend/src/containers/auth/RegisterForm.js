@@ -78,6 +78,11 @@ const RegisterForm = (a) => {
       console.log(user);
       a.history.push('/'); //홈화면으로 이동
     }
+    try {
+      localStorage.setItem('user', JSON.stringify(user));
+    } catch (e) {
+      console.log('localStorage is not working');
+    }
   }, [a.history, user]);
   return (
     <AuthForm
